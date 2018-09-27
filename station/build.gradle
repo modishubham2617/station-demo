@@ -30,6 +30,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("io.springfox:springfox-swagger2:2.9.2")
 	compile ("io.springfox:springfox-swagger-ui:2.9.2")
+	compile('org.springframework.boot:spring-boot-starter-actuator')
 	//compile('org.flywaydb:flyway-core')
 	runtime('com.h2database:h2')
 	compileOnly('org.projectlombok:lombok')
