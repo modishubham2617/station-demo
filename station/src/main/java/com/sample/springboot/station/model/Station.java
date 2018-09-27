@@ -14,8 +14,6 @@ import java.io.Serializable;
 //column length ?
 @Data
 @Accessors(chain = true)
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

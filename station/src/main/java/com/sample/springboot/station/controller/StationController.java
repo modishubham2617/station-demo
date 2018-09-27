@@ -1,5 +1,6 @@
 package com.sample.springboot.station.controller;
 
+import com.sample.springboot.station.exception.StationNotFoundException;
 import com.sample.springboot.station.model.Station;
 import com.sample.springboot.station.repository.StationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class StationController {
         if(optionalStation.isPresent()){
             repository.save(station);
         }else{
-            //Record Not found
+            throw new StationNotFoundException("id="+station.getStationId());
         }
 
         return station.getStationId();
@@ -43,7 +44,7 @@ public class StationController {
         if(optionalStation.isPresent()){
             repository.delete(optionalStation.get());
         }else{
-            //Record Not found
+            throw new StationNotFoundException("id="+stationId);
         }
         return Boolean.TRUE;
     }
@@ -54,8 +55,7 @@ public class StationController {
         if(optionalStation.isPresent()){
              return  optionalStation.get();
         }else{
-            //Record not found.
-            return null;
+            throw new StationNotFoundException("id="+stationId);
         }
      }
 

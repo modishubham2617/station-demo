@@ -32,4 +32,7 @@ dependencies {
 	runtime('com.h2database:h2')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	// https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin
+	compile group: 'org.jacoco', name: 'jacoco-maven-plugin', version: '0.8.2'
+
 }
